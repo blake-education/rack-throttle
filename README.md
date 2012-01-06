@@ -92,6 +92,14 @@ Examples
     
     use Rack::Throttle::Interval, :cache => Redis.new, :key_prefix => :throttle
 
+### Storing the rate-limiting counters using the default Rails cache_store (Rails.cache)
+
+    class Application < Rails::Application
+      config.middleware.use Rack::Throttle::Interval, :cache => Rack::Throttle::RailsCacheAdapter.new
+      # or
+      config.middleware.use Rack::Throttle::Interval, :cache => Rack::Throttle::RailsCacheAdapter.new(:expires_in => 1.day)
+    end
+
 Throttling Strategies
 ---------------------
 
