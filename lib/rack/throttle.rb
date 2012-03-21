@@ -8,6 +8,7 @@ module Rack
     autoload :Daily,      'rack/throttle/daily'
     autoload :Hourly,     'rack/throttle/hourly'
     autoload :Minute,     'rack/throttle/minute'
+    autoload :RailsCacheAdapter,     'rack/throttle/rails_cache_adapter'
     autoload :VERSION,    'rack/throttle/version'
   end
 end
